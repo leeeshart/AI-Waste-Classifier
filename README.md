@@ -1,4 +1,4 @@
-# ♻️ AI Waste Classifier  
+# ♻️ EcoSort 
 ### Sustainable Cities & Communities (SDG 11)
 
 An AI-powered solution to classify waste as **Recyclable, Biodegradable, or Hazardous** using image uploads or text descriptions.  
