@@ -56,10 +56,7 @@ Built for the **Global AI Buildathon 2025**.
 ---
 
 ## 👨‍💻 Team
-- [Your Name] – Model Development  
-- [Teammate 2] – Frontend (React)  
-- [Teammate 3] – Backend & Integration  
-- [Teammate 4] – Presentation & Documentation  
+Daksh, Leesha [leeshart] and contributors.
 
 ---
 
