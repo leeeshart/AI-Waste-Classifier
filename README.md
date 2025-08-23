@@ -56,7 +56,7 @@ Built for the **Global AI Buildathon 2025**.
 ---
 
 ## 👨‍💻 Team
-Daksh, Leesha [leeshart] and contributors.
+Daksh, [leeeshart](https://github.com/leeeshart) and contributors.
 
 ---
 
