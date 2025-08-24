@@ -6,7 +6,15 @@ Production configuration and utilities for EcoSort Backend API
 import os
 import logging
 from typing import Dict, Any
-from dotenv import load_dotenv
+
+# Try to import dotenv, fallback to environment variables if not available
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    # Fallback if python-dotenv is not installed
+    def load_dotenv(env_file=None):
+        """Fallback load_dotenv function"""
+        pass
 
 class Config:
     """Base configuration class"""
@@ -116,8 +124,10 @@ class ProductionConfig(Config):
     DEBUG = False
     FLASK_ENV = 'production'
     
-    def __init__(self):
-        super().__init__('.env.production')
+    def __init__(self, env_file: str = None):
+        if env_file is None:
+            env_file = '.env.production'
+        super().__init__(env_file)
 
 
 class TestingConfig(Config):
