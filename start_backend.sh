@@ -22,11 +22,11 @@ source venv/bin/activate
 
 # Install dependencies
 echo "📥 Installing dependencies..."
-pip install -r requirements.txt
+pip install -r requirements_simple.txt
 
 # Create uploads directory
 mkdir -p uploads
 
 # Start the server
-echo "🚀 Starting Flask server on http://localhost:3000"
-python app.py
+echo "🚀 Starting Flask server on http://localhost:5000"
+python app_simple.py

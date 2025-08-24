@@ -111,10 +111,10 @@ curl -X POST -F "image=@/path/to/image.jpg" http://localhost:5000/classify-image
 
 ### File Structure
 ```
-├── app_simple.py          # Main Flask application
-├── app.py                 # Advanced version with TensorFlow (optional)
+├── app_simple.py          # Main Flask application (development)
+├── app_production.py      # Production Flask application
 ├── requirements_simple.txt # Basic dependencies
-├── requirements.txt       # Full dependencies with TensorFlow
+├── requirements.txt       # Full dependencies for production
 ├── start_backend.sh       # Startup script
 └── uploads/               # Directory for uploaded images
 ```
