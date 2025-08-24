@@ -73,3 +73,18 @@ uploads/
 *.pkl
 *.joblib
 models/
+
+# Test coverage
+coverage/
+.coverage
+coverage.xml
+.pytest_cache/
+
+# Production secrets
+secrets/
+ssl/
+
+# Temporary files
+tmp/
+temp/
+test_uploads/

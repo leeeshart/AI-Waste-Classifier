@@ -143,6 +143,40 @@ image: <file>
 
 ---
 
+## 🚀 Production Deployment
+
+### Production-Ready Features
+- **Enhanced Security**: API authentication, rate limiting, input validation
+- **Docker Containerization**: Multi-stage builds with health checks
+- **CI/CD Pipeline**: Automated testing and deployment with GitHub Actions
+- **Monitoring & Logging**: Comprehensive metrics and structured logging
+- **Database Integration**: PostgreSQL and Redis support
+- **Load Balancing**: Nginx reverse proxy configuration
+
+### Quick Production Deploy
+```bash
+# Clone and deploy
+git clone https://github.com/leeeshart/AI-Waste-Classifier.git
+cd AI-Waste-Classifier
+
+# Configure environment
+cp .env.example .env.production
+# Edit .env.production with your settings
+
+# Deploy with Docker
+./deploy.sh production
+```
+
+### Health Monitoring
+```bash
+# Health checks
+curl http://localhost:5000/health/live      # Liveness probe
+curl http://localhost:5000/health/ready     # Readiness probe
+curl http://localhost:5000/metrics          # Performance metrics
+```
+
+---
+
 ## 🔮 Future Scope
 - Voice input support (“plastic bottle”).  
 - Multilingual support.  
@@ -172,6 +206,8 @@ MIT License – free to use & modify for sustainability projects.
 
 ---
 
-## 📚 Additional Documentation
-- [Backend Setup Guide](BACKEND_README.md) - Detailed backend installation and API documentation
+## 📚 Documentation
+- [Backend Setup Guide](BACKEND_README.md) - Development setup and API documentation
+- [Production Deployment Guide](PRODUCTION_GUIDE.md) - Production deployment and configuration
+- [API Documentation](PRODUCTION_GUIDE.md#api-documentation) - Enhanced API reference
 
