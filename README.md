@@ -11,39 +11,135 @@ Built for the **Global AI Buildathon 2025**.
 - Enter a **description (e.g., "banana peel")** → Text-based classification.  
 - Disposal **tips & icons** for each category.  
 - Lightweight model (MobileNetV2 / TensorFlow.js) → runs fast on web/mobile.  
-- Deployed demo accessible online.  
-
----
-
-## 🌍 Impact
-- **Problem:** Cities generate massive amounts of waste daily, but segregation into dry, wet, and hazardous categories is often neglected.  
-- **Solution:** AI Waste Classifier enables quick and accurate waste classification, helping municipalities improve sorting, NGOs/schools raise awareness, and households dispose waste responsibly.**.  
-- **SDG Alignment:**  
-  - **SDG 11:** Sustainable Cities & Communities  
-  - **SDG 12:** Responsible Consumption & Production  
-  - **SDG 13:** Climate Action  
-- Reduces landfill waste, increases recycling, and prevents hazardous exposure.  
+- Full-stack application with React frontend and Flask backend.
 
 ---
 
 ## 🛠️ Tech Stack
-- **Frontend:** React.js (image upload, text input, results UI)  
-- **Backend:** Flask / FastAPI (optional, if not using TF.js)  
-- **Model:** MobileNetV2 (Transfer Learning) / TensorFlow.js  
+- **Frontend:** React.js + Vite (image upload, text input, results UI)  
+- **Backend:** Flask API with CORS support  
+- **AI Classification:** 
+  - Text: Keyword-based classification
+  - Image: Basic heuristics (expandable to MobileNetV2/TensorFlow)
 - **Dataset:** [Kaggle – Waste Classification Dataset](https://www.kaggle.com/datasets/techsash/waste-classification-data)  
-- **Deployment:** Render / Hugging Face Spaces / Vercel  
+- **Deployment:** Local development setup included
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 16+ and npm
+- Python 3.7+
+- pip
+
+### Setup Instructions
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/leeeshart/AI-Waste-Classifier.git
+   cd AI-Waste-Classifier
+   ```
+
+2. **Install Python dependencies:**
+   ```bash
+   pip install -r requirements_simple.txt
+   ```
+
+3. **Install Node.js dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Start the backend server:**
+   ```bash
+   python3 app_simple.py
+   ```
+   Backend will run on http://localhost:5000
+
+5. **Start the frontend (in a new terminal):**
+   ```bash
+   npm run dev
+   ```
+   Frontend will run on http://localhost:3000
+
+6. **Open your browser and visit http://localhost:3000**
 
 ---
 
 ## ⚙️ How It Works
 1. User uploads an image OR enters waste description.  
-2. AI Model (MobileNetV2) predicts → **Recyclable / Biodegradable / Hazardous**.  
-3. App shows result with icon + disposal instructions.  
+2. Frontend sends request to Flask backend API.
+3. Backend processes the input:
+   - **Text:** Keyword matching against waste category dictionaries
+   - **Image:** Basic image analysis (extensible to ML models)
+4. API returns classification with confidence score and disposal tips.
+5. Frontend displays result with icon + disposal instructions.  
 
 ---
 
-## 📸 Screenshots
-*(Add UI screenshots here after building)*  
+## 📁 Project Structure
+```
+├── Frontend (React + Vite)
+│   ├── App.jsx                 # Main app component
+│   ├── Home.js                 # Landing page
+│   ├── ImageUpload.jsx         # Image classification page
+│   ├── TextClassify.jsx        # Text classification page
+│   ├── History.jsx             # Classification history
+│   ├── FutureVision.jsx        # Future features showcase
+│   └── api.js                  # API communication layer
+├── Backend (Flask API)
+│   ├── app_simple.py           # Main Flask server
+│   ├── app.py                  # Advanced version with TensorFlow
+│   └── requirements_simple.txt # Python dependencies
+├── Documentation
+│   ├── BACKEND_README.md       # Backend setup guide
+│   └── README.md               # This file
+└── Configuration
+    ├── package.json            # Node.js dependencies
+    ├── vite.config.js          # Vite configuration
+    └── .gitignore              # Git ignore rules
+```
+
+---
+
+## 🔧 API Endpoints
+
+### Text Classification
+```bash
+POST /classify-text
+Content-Type: application/json
+
+{
+  "text": "plastic bottle"
+}
+```
+
+**Response:**
+```json
+{
+  "label": "recyclable",
+  "confidence": 0.8,
+  "tip": "Clean the item and place it in the recycling bin..."
+}
+```
+
+### Image Classification
+```bash
+POST /classify-image
+Content-Type: multipart/form-data
+
+image: <file>
+```
+
+**Response:**
+```json
+{
+  "label": "biodegradable", 
+  "confidence": 0.75,
+  "tip": "Compost this item in your garden compost bin..."
+}
+```
 
 ---
 
@@ -62,4 +158,20 @@ Daksh, [leeeshart](https://github.com/leeeshart) and contributors.
 
 ## 📜 License
 MIT License – free to use & modify for sustainability projects.  
+
+---
+
+## 🌍 Impact
+- **Problem:** Cities generate massive amounts of waste daily, but segregation into dry, wet, and hazardous categories is often neglected.  
+- **Solution:** AI Waste Classifier enables quick and accurate waste classification, helping municipalities improve sorting, NGOs/schools raise awareness, and households dispose waste responsibly.  
+- **SDG Alignment:**  
+  - **SDG 11:** Sustainable Cities & Communities  
+  - **SDG 12:** Responsible Consumption & Production  
+  - **SDG 13:** Climate Action  
+- Reduces landfill waste, increases recycling, and prevents hazardous exposure.  
+
+---
+
+## 📚 Additional Documentation
+- [Backend Setup Guide](BACKEND_README.md) - Detailed backend installation and API documentation
 
