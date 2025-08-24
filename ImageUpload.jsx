@@ -69,7 +69,7 @@ const ImageUpload = ({ onNavigate }) => {
       const formData = new FormData();
       formData.append('image', selectedFile);
 
-      const response = await fetch('http://localhost:3000/classify-image', {
+      const response = await fetch('http://localhost:5000/classify-image', {
         method: 'POST',
         body: formData,
       });

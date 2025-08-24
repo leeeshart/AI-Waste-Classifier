@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Home from './Home';
+import Home from './Home.jsx';
 import ImageUpload from './ImageUpload';
 import TextClassify from './TextClassify';
 import History from './History';
